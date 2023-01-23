@@ -1,0 +1,1 @@
+variable "kubernetes_namespace" {}

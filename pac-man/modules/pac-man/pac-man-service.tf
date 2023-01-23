@@ -1,10 +1,10 @@
-resource "kubernetes_service" "pacman" {
+resource "kubernetes_service" "pac-man" {
   metadata {
-    name      = "pacman"
-    namespace = var.namespace
+    name = "pac-man"
+    namespace = var.kubernetes_namespace
 
     labels = {
-      name = "pacman"
+      name = "pac-man"
     }
   }
 
@@ -16,7 +16,7 @@ resource "kubernetes_service" "pacman" {
     }
 
     selector = {
-      name = "pacman"
+      name = "pac-man"
     }
 
     type = "LoadBalancer"

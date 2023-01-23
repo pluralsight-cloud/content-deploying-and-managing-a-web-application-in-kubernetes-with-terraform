@@ -1,7 +1,7 @@
 resource "kubernetes_deployment" "mongo" {
   metadata {
-    name      = "mongo"
-    namespace = var.namespace
+    name = "mongo"
+    namespace = var.kubernetes_namespace
 
     labels = {
       name = "mongo"
@@ -44,7 +44,7 @@ resource "kubernetes_deployment" "mongo" {
 
           volume_mount {
             name       = "mongo-db"
-            mount_path = "/data/db"
+            mount_path = "/mnt/data/db"
           }
         }
       }
